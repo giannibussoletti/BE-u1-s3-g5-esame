@@ -27,10 +27,20 @@ public abstract class Pubblicazione {
     }
 
     public Pubblicazione(String isbn, String titolo, int annoPubblicazione, int numeroPagine) {
-        this.isbn = isbn;
+        this.isbn = isbn.replace(" ", "");
         this.titolo = titolo;
         this.annoPubblicazione = annoPubblicazione;
         this.numeroPagine = numeroPagine;
 
+    }
+
+    @Override
+    public String toString() {
+        return "Pubblicazione:" + "\n" +
+                "id: " + id + "\n" +
+                "ISBN: " + isbn + '\n' +
+                "titolo: " + titolo + '\n' +
+                "anno di pubblicazione: " + annoPubblicazione + "\n" +
+                "numero totale di pagine: " + numeroPagine;
     }
 }
