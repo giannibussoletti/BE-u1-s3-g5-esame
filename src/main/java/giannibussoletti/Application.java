@@ -6,6 +6,7 @@ import giannibussoletti.dao.UtenteDAO;
 import giannibussoletti.entities.Libro;
 import giannibussoletti.entities.Pubblicazione;
 import giannibussoletti.enums.Genere;
+import giannibussoletti.exceptions.BookNotFoundException;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
@@ -45,16 +46,44 @@ public class Application {
 //        pubDAO.save(casePiuBelle);
 //        pubDAO.save(ascoltandoIlMondo);
 //        pubDAO.save(passioneAmiga);
-
-
-        //Funziona
+//
+//
+//        Funzionante
+//        Rimozione di un elemento del catalogo dato un codice ISBN
 //        pubDAO.findByISBNandDelete("8845936732");
 
-        //Funziona
+//        Funzionante
+//        Ricerca per ISBN
 //        try {
 //            pubDAO.findByISBN("88074939692323");
 //        } catch (IsbnNotFoundException e) {
 //            System.out.println(e.getMessage());
 //        }
+
+
+//        Funzionante
+//        Ricerca per anno pubblicazione
+//        try {
+//            pubDAO.findByYear(2025).forEach(System.out::println);
+//        } catch (BookNotFoundException ex) {
+//            System.out.println(ex.getMessage());
+//        }
+//        Ricerca per autore
+//        Funzionante
+//        try {
+//            pubDAO.findByAuthor("tt").forEach(System.out::println);
+//        } catch (BookNotFoundException ex) {
+//            System.out.println(ex.getMessage());
+//        }
+
+//        Ricerca per titolo o parte di esso
+//        Funzionante
+//        try {
+//            pubDAO.findByTitle("ll").forEach(System.out::println);
+//        } catch (BookNotFoundException ex) {
+//            System.out.println(ex.getMessage());
+//        }
+
+
     }
 }

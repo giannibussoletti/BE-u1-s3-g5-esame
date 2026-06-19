@@ -5,6 +5,7 @@ import giannibussoletti.exceptions.BookNotFoundException;
 import giannibussoletti.exceptions.IsbnNotFoundException;
 import jakarta.persistence.*;
 
+import java.util.List;
 import java.util.UUID;
 
 public class PubblicazioneDAO {
@@ -41,6 +42,27 @@ public class PubblicazioneDAO {
         } catch (NoResultException e) {
             throw new IsbnNotFoundException(isbn);
         }
+    }
+
+    public List<Pubblicazione> findByYear(int annoPubblicazione) {
+        TypedQuery<Pubblicazione> query = entityManager.createQuery("SELECT p FROM Pubblicazione p WHERE p.annoPubblicazione = :annoPubblicazione", Pubblicazione.class);
+        query.setParameter("annoPubblicazione", annoPubblicazione);
+        if (query.getResultList().isEmpty()) throw new BookNotFoundException();
+        else return query.getResultList();
+    }
+
+    public List<Pubblicazione> findByAuthor(String autore) {
+        TypedQuery<Pubblicazione> query = entityManager.createQuery("SELECT p FROM Pubblicazione p WHERE LOWER(p.autore) LIKE :autore", Pubblicazione.class);
+        query.setParameter("autore", "%" + autore + "%");
+        if (query.getResultList().isEmpty()) throw new BookNotFoundException();
+        else return query.getResultList();
+    }
+
+    public List<Pubblicazione> findByTitle(String titolo) {
+        TypedQuery<Pubblicazione> query = entityManager.createQuery("SELECT p FROM Pubblicazione p WHERE LOWER(p.titolo) LIKE :titolo", Pubblicazione.class);
+        query.setParameter("titolo", "%" + titolo + "%");
+        if (query.getResultList().isEmpty()) throw new BookNotFoundException();
+        else return query.getResultList();
     }
 
 
