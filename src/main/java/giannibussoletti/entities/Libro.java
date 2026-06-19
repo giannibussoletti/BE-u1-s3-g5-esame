@@ -1,16 +1,16 @@
 package giannibussoletti.entities;
 
-import giannibussoletti.exceptions.Genere;
-import jakarta.persistence.Column;
+import giannibussoletti.enums.Genere;
 import jakarta.persistence.DiscriminatorValue;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 
 @Entity
 @DiscriminatorValue("libro")
 public class Libro extends Pubblicazione {
-    @Column(nullable = false)
     private String autore;
-    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private Genere genere;
 
     protected Libro() {

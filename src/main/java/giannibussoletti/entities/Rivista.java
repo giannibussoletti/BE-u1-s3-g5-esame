@@ -1,12 +1,12 @@
 package giannibussoletti.entities;
 
-import giannibussoletti.exceptions.Periodico;
+import giannibussoletti.enums.Periodico;
 import jakarta.persistence.*;
 
 @Entity
 @DiscriminatorValue("rivista")
 public class Rivista extends Pubblicazione {
-    @Column(name = "periodicità", nullable = false)
+    @Column(name = "periodicità")
     @Enumerated(EnumType.STRING)
     private Periodico periodico;
 

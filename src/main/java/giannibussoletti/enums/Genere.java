@@ -1,4 +1,4 @@
-package giannibussoletti.exceptions;
+package giannibussoletti.enums;
 
 public enum Genere {
     STORICO,
