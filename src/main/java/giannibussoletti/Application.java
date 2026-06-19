@@ -77,7 +77,7 @@ public class Application {
 //        prestiDAO.save(prestitoOtt);
 //        prestiDAO.save(prestitoNov);
 //
-        System.out.println("Interruzione Commento");
+
 //        Funzionante
 //        Rimozione di un elemento del catalogo dato un codice ISBN
 //        pubDAO.findByISBNandDelete("8845936732");
@@ -123,7 +123,6 @@ public class Application {
 //        prestiDAO.findExpiredDate().forEach(System.out::println);
 
         prestiDAO.findBYCardNumber(382304820).forEach(System.out::println);
-
 
 
     }
