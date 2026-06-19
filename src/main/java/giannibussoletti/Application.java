@@ -7,8 +7,6 @@ import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
 
-import java.time.LocalDate;
-
 public class Application {
 
     public static final EntityManagerFactory emf = Persistence.createEntityManagerFactory("bes3g5exampu");
@@ -79,7 +77,7 @@ public class Application {
 //        prestiDAO.save(prestitoOtt);
 //        prestiDAO.save(prestitoNov);
 //
-//
+        System.out.println("Interruzione Commento");
 //        Funzionante
 //        Rimozione di un elemento del catalogo dato un codice ISBN
 //        pubDAO.findByISBNandDelete("8845936732");
@@ -120,6 +118,15 @@ public class Application {
 //        Funzionante
 //        prestiDAO.setReturnDate(LocalDate.of(2026, 7, 30), "ce7215c3-6282-45d0-87ad-c9a233dffa93");
 
-        prestiDAO.findExpiredDate().forEach(System.out::println);
+//        Ricerca di tutti i prestiti scaduti e non ancora restituiti
+//        Funzionante
+//        prestiDAO.findExpiredDate().forEach(System.out::println);
+
+        prestiDAO.findBYCardNumber(382304820).forEach(System.out::println);
+
+
+
     }
+
+
 }
