@@ -24,8 +24,7 @@ public class Utente {
     protected Utente() {
     }
 
-    protected Utente(UUID id, String name, String surname, LocalDate dataNascita, int numeroTessera) {
-        this.id = id;
+    public Utente(String name, String surname, LocalDate dataNascita, int numeroTessera) {
         this.name = name;
         this.surname = surname;
         this.dataNascita = dataNascita;
