@@ -40,14 +40,21 @@ public class Application {
 //        Pubblicazione passioneAmiga = new Rivista("8196398858", "Passione Amiga #31: Maggio 2026: La rivista italiana dedicata al mondo Amiga ", 2022, 47, Periodico.MENSILE);
 //        pubDAO.save(ruotaAnno);
 //        pubDAO.save(laCitta);
-        pubDAO.save(ilSospetto);
+//        pubDAO.save(ilSospetto);
 //        pubDAO.save(sempreLaValle);
 //        pubDAO.save(casePiuBelle);
 //        pubDAO.save(ascoltandoIlMondo);
 //        pubDAO.save(passioneAmiga);
 
-        pubDAO.findByISBNandDelete(" 8845936732");
 
+        //Funziona
+//        pubDAO.findByISBNandDelete("8845936732");
 
+        //Funziona
+//        try {
+//            pubDAO.findByISBN("88074939692323");
+//        } catch (IsbnNotFoundException e) {
+//            System.out.println(e.getMessage());
+//        }
     }
 }

@@ -19,4 +19,10 @@ public class Rivista extends Pubblicazione {
         this.periodico = periodico;
     }
 
+    @Override
+    public String toString() {
+        return super.toString() + "\n" +
+                "periodico: " + periodico + "\n" +
+                "------------------------------";
+    }
 }

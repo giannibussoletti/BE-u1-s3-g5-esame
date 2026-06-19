@@ -22,4 +22,11 @@ public class Libro extends Pubblicazione {
         this.genere = genere;
 
     }
+
+    @Override
+    public String toString() {
+        return super.toString() + "\n" +
+                "autore: " + autore + '\n' +
+                "genere: " + genere;
+    }
 }

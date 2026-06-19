@@ -2,9 +2,8 @@ package giannibussoletti.dao;
 
 import giannibussoletti.entities.Pubblicazione;
 import giannibussoletti.exceptions.BookNotFoundException;
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityTransaction;
-import jakarta.persistence.Query;
+import giannibussoletti.exceptions.IsbnNotFoundException;
+import jakarta.persistence.*;
 
 import java.util.UUID;
 
@@ -33,6 +32,17 @@ public class PubblicazioneDAO {
         if (fromDB == null) throw new BookNotFoundException(id);
         return fromDB;
     }
+
+    public Pubblicazione findByISBN(String isbn) {
+        TypedQuery<Pubblicazione> query = entityManager.createQuery("SELECT p FROM Pubblicazione p WHERE p.isbn = :isbn", Pubblicazione.class);
+        query.setParameter("isbn", isbn);
+        try {
+            return query.getSingleResult();
+        } catch (NoResultException e) {
+            throw new IsbnNotFoundException(isbn);
+        }
+    }
+
 
     public void findByISBNandDelete(String isbn) {
         EntityTransaction transaction = this.entityManager.getTransaction();
