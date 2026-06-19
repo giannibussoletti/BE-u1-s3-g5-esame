@@ -46,4 +46,9 @@ public class PrestitoDAO {
         return query.getResultList();
     }
 
+    public List<Prestito> findBYCardNumber(int numeroTessera) {
+        TypedQuery<Prestito> query = entityManager.createQuery("SELECT p FROM Prestito p JOIN p.utente u WHERE u.numeroTessera = :numeroTessera", Prestito.class);
+        query.setParameter("numeroTessera", numeroTessera);
+        return query.getResultList();
+    }
 }
