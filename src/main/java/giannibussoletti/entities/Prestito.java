@@ -21,10 +21,10 @@ public class Prestito {
     private Pubblicazione pubblicazionePrestata;
 
     @Column(name = "data_prestito", nullable = false)
-    private LocalDate dataPrestito;
+    private LocalDate dataPrestito = LocalDate.now();
 
     @Column(name = "data_restituzione")
-    private LocalDate dataRestituzione;
+    private LocalDate dataRestituzione = LocalDate.now().plusDays(30);
 
     @Column(name = "data_restituzione_effettiva")
     private LocalDate dataRestituzioneEffettiva;

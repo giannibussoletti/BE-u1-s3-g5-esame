@@ -27,6 +27,7 @@ public class Libro extends Pubblicazione {
     public String toString() {
         return super.toString() + "\n" +
                 "autore: " + autore + '\n' +
-                "genere: " + genere;
+                "genere: " + genere + "\n" +
+                "---------------------";
     }
 }
