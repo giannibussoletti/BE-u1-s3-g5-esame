@@ -3,6 +3,11 @@
              version="2.1" xmlns="http://xmlns.jcp.org/xml/ns/persistence"
              xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_1.xsd">
     <persistence-unit name="bes3g5exampu">
+        <class>giannibussoletti.entities.Pubblicazione</class>
+        <class>giannibussoletti.entities.Utente</class>
+        <class>giannibussoletti.entities.Prestito</class>
+        <class>giannibussoletti.entities.Rivista</class>
+        <class>giannibussoletti.entities.Libro</class>
         <properties>
             <property name="jakarta.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/bes3g5exam"/>
             <property name="jakarta.persistence.jdbc.user" value="postgres"/>
