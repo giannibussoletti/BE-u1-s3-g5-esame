@@ -4,6 +4,7 @@ import jakarta.persistence.*;
 
 import java.time.LocalDate;
 import java.util.UUID;
+
 @Entity
 @Table(name = "prestiti")
 public class Prestito {
@@ -32,9 +33,20 @@ public class Prestito {
     protected Prestito() {
     }
 
-    public Prestito(Utente utente, Pubblicazione pubblicazionePrestata, LocalDate dataPrestito) {
+    public Prestito(Utente utente, Pubblicazione pubblicazionePrestata) {
         this.utente = utente;
         this.pubblicazionePrestata = pubblicazionePrestata;
-        this.dataPrestito = dataPrestito;
+    }
+
+    @Override
+    public String toString() {
+        return "Prestito:" + "\n" +
+                "id: " + id + "\n\n" +
+                "utente: " + utente + "\n" +
+                "pubblicazione prestata: " + "\n" + pubblicazionePrestata + "\n" +
+                "data del prestito: " + dataPrestito + "\n" +
+                "data della restituzione: " + dataRestituzione + "\n" +
+                "data della restituzione effettiva: " + dataRestituzioneEffettiva + "\n" +
+                "...................................";
     }
 }

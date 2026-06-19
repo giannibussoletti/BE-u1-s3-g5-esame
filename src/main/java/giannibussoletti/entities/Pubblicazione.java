@@ -36,8 +36,7 @@ public abstract class Pubblicazione {
 
     @Override
     public String toString() {
-        return "Pubblicazione:" + "\n" +
-                "id: " + id + "\n" +
+        return "id: " + id + "\n" +
                 "ISBN: " + isbn + '\n' +
                 "titolo: " + titolo + '\n' +
                 "anno di pubblicazione: " + annoPubblicazione + "\n" +
