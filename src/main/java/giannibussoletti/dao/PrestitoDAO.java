@@ -41,13 +41,13 @@ public class PrestitoDAO {
     }
 
     public List<Prestito> findExpiredDate() {
-        TypedQuery<Prestito> query = entityManager.createQuery("SELECT p FROM Prestito p WHERE (p.dataRestituzione > :todayDate) OR (p.dataRestituzione = null)", Prestito.class);
+        TypedQuery<Prestito> query = entityManager.createQuery("SELECT p FROM Prestito p WHERE (p.dataRestituzione < :todayDate) AND (p.dataRestituzioneEffettiva = null)", Prestito.class);
         query.setParameter("todayDate", LocalDate.now());
         return query.getResultList();
     }
 
     public List<Prestito> findBYCardNumber(int numeroTessera) {
-        TypedQuery<Prestito> query = entityManager.createQuery("SELECT p FROM Prestito p JOIN p.utente u WHERE u.numeroTessera = :numeroTessera", Prestito.class);
+        TypedQuery<Prestito> query = entityManager.createQuery("SELECT p FROM Prestito p JOIN p.utente u WHERE u.numeroTessera = :numeroTessera AND p.dataRestituzioneEffettiva IS NULL", Prestito.class);
         query.setParameter("numeroTessera", numeroTessera);
         return query.getResultList();
     }
