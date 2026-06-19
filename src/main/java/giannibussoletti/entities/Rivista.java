@@ -22,7 +22,6 @@ public class Rivista extends Pubblicazione {
     @Override
     public String toString() {
         return super.toString() + "\n" +
-                "periodico: " + periodico + "\n" +
-                "------------------------------";
+                "periodico: " + periodico + "\n";
     }
 }

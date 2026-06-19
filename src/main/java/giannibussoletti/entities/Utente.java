@@ -30,4 +30,14 @@ public class Utente {
         this.dataNascita = dataNascita;
         this.numeroTessera = numeroTessera;
     }
+
+    @Override
+    public String toString() {
+        return "\n" +
+                "id: " + id + "\n" +
+                "nome: '" + name + '\'' + "\n" +
+                "cognome: '" + surname + '\'' + "\n" +
+                "data di nascita: " + dataNascita + "\n" +
+                "numero tessera: " + numeroTessera + "\n";
+    }
 }
